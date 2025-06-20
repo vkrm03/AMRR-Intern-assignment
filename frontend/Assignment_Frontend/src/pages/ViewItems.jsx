@@ -27,8 +27,12 @@ const dummyItems = [
 function ViewItems() {
   return (
     <div style={{ padding: '2rem' }}>
-      <h2 style={{ marginBottom: '1rem' }}>All Items</h2>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '1.5rem' }}>
+      <h2 style={{ marginBottom: '1rem', fontSize: '1.8rem', textAlign: 'center' }}>Items Page</h2>
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
+        gap: '2rem'
+      }}>
         {dummyItems.map(item => (
           <ItemCard key={item.id} item={item} />
         ))}
