@@ -1,12 +1,16 @@
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
+import { addItem } from '../redux/itemsSlice';
 
 function AddItem() {
   const [name, setName] = useState('');
   const [type, setType] = useState('');
-  const [description, setDescription] = useState('');
+  const [description, setDescription] = useState(''); 
   const [coverImage, setCoverImage] = useState('');
   const [images, setImages] = useState('');
   const [status, setStatus] = useState('');
+
+  const dispatch = useDispatch();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,6 +32,9 @@ function AddItem() {
       });
 
       if (res.ok) {
+        const newItem = await res.json();
+        dispatch(addItem(newItem));
+        
         setStatus('Item successfully added!');
         setName('');
         setType('');
@@ -37,6 +44,7 @@ function AddItem() {
       } else {
         setStatus('Something went wrong');
       }
+
     } catch (err) {
       console.error(err);
       setStatus('Server error');

@@ -22,7 +22,7 @@ function ItemModal({ item, onClose }) {
         <p><strong>Type:</strong> {item.type}</p>
         <p>{item.description}</p>
         <div style={{ display: 'flex', gap: '1rem', overflowX: 'auto', margin: '1rem 0' }}>
-          {item.images.map((img, i) => (
+          {item.images.map((img, i) => (  
             <img key={i} src={img} alt="extra" style={{ width: '150px', height: '100px', objectFit: 'cover', borderRadius: '6px' }} />
           ))}
         </div>
