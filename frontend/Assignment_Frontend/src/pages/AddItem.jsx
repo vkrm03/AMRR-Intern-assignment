@@ -100,7 +100,7 @@ function AddItem() {
 
         <input
           placeholder="Email (gmail.com , yahoo.com , hotmail.com)"
-          value={type}
+          value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
           style={inputStyle}
