@@ -5,7 +5,8 @@ import { addItem } from '../redux/itemsSlice';
 function AddItem() {
   const [name, setName] = useState('');
   const [type, setType] = useState('');
-  const [description, setDescription] = useState(''); 
+  const [description, setDescription] = useState('');
+  const [email, setEmail] = useState(''); 
   const [coverImage, setCoverImage] = useState('');
   const [images, setImages] = useState('');
   const [status, setStatus] = useState('');
@@ -20,6 +21,7 @@ function AddItem() {
       name,
       type,
       description,
+      email,
       coverImage,
       images: images.split(',').map(img => img.trim())
     };
@@ -92,6 +94,14 @@ function AddItem() {
           placeholder="Cover Image URL"
           value={coverImage}
           onChange={(e) => setCoverImage(e.target.value)}
+          required
+          style={inputStyle}
+        />
+
+        <input
+          placeholder="Email (gmail.com , yahoo.com , hotmail.com)"
+          value={type}
+          onChange={(e) => setEmail(e.target.value)}
           required
           style={inputStyle}
         />
