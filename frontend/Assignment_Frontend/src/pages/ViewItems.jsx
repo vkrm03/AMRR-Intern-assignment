@@ -21,7 +21,6 @@ function ViewItems() {
         console.error('Failed to fetch items:', error);
       }
     };
-
     fetchItems();
   }, [dispatch]);
 
